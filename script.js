@@ -52,8 +52,8 @@ if (menuButton && navigationLinks) {
 }
 
 /*
- * Open a project overview when a visitor follows its card link
- * or opens a URL containing that project's fragment.
+ * Reveal a project overview when its card is selected
+ * or its fragment appears in the page URL.
  */
 function revealProjectFromHash(hash, scroll = true) {
   if (!hash || hash === "#") return;
@@ -94,6 +94,7 @@ window.addEventListener("hashchange", () => {
 
 revealProjectFromHash(window.location.hash);
 
+/* Keep the footer year current. */
 const yearElement = document.getElementById("year");
 
 if (yearElement) {
