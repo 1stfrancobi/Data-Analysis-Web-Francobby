@@ -1,10 +1,10 @@
 # Francis Cobbinah — Data Analysis Portfolio
 
-A personal portfolio showcasing data analysis, machine-learning
+A personal portfolio presenting data analysis, machine-learning
 research, visualization and geospatial project contributions.
 
-The website adapts the dark background, purple accents, project
-cards and timeline layout of the supplied open-source portfolio.
+The design uses a dark background, purple accents, rounded project
+cards, expandable project overviews and a circular profile photograph.
 
 ## Technologies
 
@@ -12,77 +12,91 @@ cards and timeline layout of the supplied open-source portfolio.
 - CSS3
 - Vanilla JavaScript
 
-No package installation, framework or build process is required.
+No framework, package installation or build process is required.
 
 ## Files
 
 | File | Purpose |
 |---|---|
-| index.html | Portfolio content and expandable project overviews |
-| styles.css | Theme, layouts and responsive styling |
+| index.html | Portfolio content and project overviews |
+| styles.css | Theme, circular photograph and responsive layouts |
 | script.js | Mobile navigation and project-link behaviour |
 | README.md | Setup and maintenance instructions |
 | LICENSE | Original template license |
-| images/ | Project screenshots |
+| images/ | Profile photograph and project screenshots |
 
 ## Required Images
 
 Place these files inside the images folder:
 
+- profile.jpg
 - Bike_Share_Dashboard.png
 - Data_Analysis_with_Python.png
 - Rplot.png
 
-Use the exact filenames and capitalization shown above.
+Filenames and capitalization must match the HTML paths exactly.
 
-The homepage uses an FC monogram. It does not require a portrait.
+## Profile Photograph
+
+The photograph is displayed inside the purple circle in the hero.
+
+Its default path in index.html is:
+
+    images/profile.jpg
+
+If the photograph has another filename or extension, update the
+image source in index.html to match.
+
+The CSS uses object-fit: cover to fill the circle without stretching
+the photograph. Parts of the image may be cropped.
+
+To adjust the visible area, edit object-position in this rule:
+
+    .profile-photo img {
+      object-position: center;
+    }
+
+For example, center 30% shifts the visible area toward the upper
+part of a portrait.
+
+The small FC navigation logo and browser favicon remain separate
+from the profile photograph.
 
 ## Website Sections
 
-### About
+- About
+- Selected projects
+- Project contributions
+- Education
+- Contact
 
-Introduces Francis Cobbinah’s background in data analysis,
-geomatic engineering, research and technical reporting.
-
-### Selected Projects
+## Selected Projects
 
 - GRACE/GRACE-FO satellite-gravity gap filling
 - Bike-sharing performance dashboard
 - Healthcare facility suitability in Greater Accra
 - Exploratory visualizations with Python and R
 
-Each project card links to an expandable overview on the same page.
+Project cards link to expandable overviews on the same page.
 
-### Project Contributions
+## Project Contributions
 
-Presents responsibilities and outputs from:
+Project descriptions cover:
 
 - Bauxite mapping and spatial-data management at GIADEC
-- Road construction measurement with Associated Consultants Ltd
+- Construction measurement with Associated Consultants Ltd
 - Mine surveying and monitoring at Perseus Mining Ghana Limited
 - Cadastral data processing and mapping with Jemem Surveys
 
-Descriptions focus on contributions without placement labels.
-They distinguish supported activities from work performed directly.
+Descriptions focus on contributions and outputs without placement
+labels, while preserving distinctions between supported activities
+and work performed directly.
 
-### Education
+## Preview
 
-- BSc Geomatic Engineering, University of Mines and Technology
-- GIS, Mapping, and Spatial Analysis, University of Toronto via Coursera
-- AI Career Essentials, ALX
+Open index.html in a browser.
 
-### Contact
-
-Provides email, LinkedIn and GitHub links.
-
-The website has no contact-form backend and does not store messages.
-The email link opens the visitor’s configured email application.
-
-## Local Preview
-
-Open index.html directly in a browser.
-
-Alternatively, open a terminal in the website folder and run:
+Alternatively, run this command inside the website folder:
 
     python -m http.server 8000
 
@@ -90,45 +104,42 @@ Then visit:
 
     http://localhost:8000
 
-Stop the server with Ctrl+C when finished.
+Stop the local server with Ctrl+C.
 
 ## Customization
 
-### Change Text
+### Text
 
 Edit the relevant sections in index.html.
 
-### Change Colours
+### Colours
 
-Update the variables in the :root block of styles.css.
+Change the variables in the :root block of styles.css.
 
-### Replace Project Images
+### Project Images
 
-Replace files in images/ or update the corresponding image paths
-in index.html. Update alternative text when the image changes.
+Replace the files in images/ or update their paths in index.html.
+Update alternative text if the content of an image changes.
 
 ### Add a Project
 
-1. Duplicate an existing project-card article.
-2. Update its title, description and tool tags.
-3. Give its link a unique fragment, such as #new-project.
+1. Duplicate a project-card article.
+2. Update its title, description and tags.
+3. Link it to a unique fragment such as #new-project.
 4. Duplicate a case-study details element.
-5. Set its id to the same value, such as new-project.
-6. Add the project’s question, contribution, outputs and limitations.
+5. Give that details element the matching id: new-project.
+6. Add the question, contribution, outputs and limitations.
 
-The JavaScript opens the matching overview when its link is followed.
+### Contact Details
 
-### Update Contact Details
+Update the email and social links in the contact section.
 
-Change the email and profile links in the contact section.
+The email link opens the visitor's configured email application.
+There is no contact-form backend.
 
-### Update Education or Project Contributions
+## Accessibility
 
-Edit the education-card or timeline-entry elements in index.html.
-
-## Accessibility Features
-
-- Semantic HTML structure
+- Semantic HTML sections
 - Skip-to-content link
 - Descriptive image alternative text
 - Visible keyboard focus
@@ -137,43 +148,37 @@ Edit the education-card or timeline-entry elements in index.html.
 - Escape-key support for closing the mobile menu
 - Reduced-motion support
 
-Without JavaScript, navigation links and project disclosures remain
-available. Automatic opening of a project from its link requires
-JavaScript.
+Without JavaScript, navigation and project disclosures remain
+available. Automatic opening from project links requires JavaScript.
 
-## Content and Evidence
+## Content Notes
 
-- Dashboard screenshots are static previews, not embedded dashboards.
+- Dashboard images are static previews.
 - Research predictions are estimates, not new satellite measurements.
 - Restaurant counts describe the analysed sample.
-- The Python histogram is presented as a visualization example.
+- The Python histogram is a visualization example.
 - Unverified model scores and business impacts are not claimed.
 - The supplied restaurant chart has a cropped title; replace it
   with a complete export when available.
 
 ## Checks Before Publishing
 
-- Confirm all images load.
-- Test every navigation and project link.
-- Open and close each project overview.
-- Test the mobile menu and Escape key.
+- Confirm the profile photograph loads and its crop is suitable.
+- Confirm all project screenshots load.
+- Test navigation and project links.
+- Open and close the project overviews.
+- Check the mobile menu and Escape key.
 - Navigate using the keyboard.
-- Review narrow-screen and desktop layouts.
-- Check readability at increased browser zoom.
-- Confirm email and social links are correct.
-- Verify that all project descriptions accurately reflect your work.
+- Review desktop and narrow-screen layouts.
+- Confirm contact links and project descriptions are accurate.
 
-This version has not yet been browser-tested or published.
+This update has not been verified against the locally added
+profile photograph or tested in a browser.
 
 ## Template Attribution
 
 Adapted from the supplied
-“Open-Source-and-Fully-Customizable-Data-Portfolio-for-Analysts”
+Open-Source-and-Fully-Customizable-Data-Portfolio-for-Analysts
 template.
 
-The original template includes a CC0 1.0 Universal dedication.
-Retain its LICENSE file.
-
-The template’s dedication does not automatically establish reuse
-rights for separately supplied photographs, screenshots or other
-third-party materials.
+Retain the original template's LICENSE file.
