@@ -210,6 +210,11 @@ p {
   align-items: center;
 }
 
+.hero-text,
+.hero-identity {
+  min-width: 0;
+}
+
 .hero-text h1 {
   margin-bottom: 24px;
   font-size: clamp(3rem, 6.5vw, 5.6rem);
@@ -272,22 +277,28 @@ p {
   text-align: center;
 }
 
-.monogram {
+/* Profile photograph */
+
+.profile-photo {
   width: min(290px, 100%);
   aspect-ratio: 1;
   margin-inline: auto;
-  display: grid;
-  place-items: center;
+  overflow: hidden;
   border-radius: 50%;
   border: 2px solid var(--purple);
-  background: linear-gradient(135deg, #29143f, #120d1c);
+  background: var(--surface);
+
   box-shadow:
     0 0 0 16px rgba(168, 85, 247, 0.035),
     0 25px 65px rgba(124, 58, 237, 0.2);
-  font-size: 5.5rem;
-  font-weight: 750;
-  letter-spacing: -0.06em;
-  color: var(--purple-light);
+}
+
+.profile-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .identity-caption {
@@ -402,7 +413,7 @@ p {
   text-decoration: none;
 }
 
-/* Expandable case studies */
+/* Expandable project overviews */
 
 .case-studies {
   margin-top: 45px;
@@ -448,6 +459,10 @@ p {
   margin-block: 25px;
 }
 
+.case-grid > div {
+  min-width: 0;
+}
+
 .case-grid h3 {
   font-size: 1.05rem;
 }
@@ -474,7 +489,7 @@ p {
   font-size: 0.875rem;
 }
 
-/* Project contribution timeline */
+/* Project contributions */
 
 .timeline {
   padding: 30px;
@@ -567,6 +582,7 @@ p {
 .contact-links {
   display: grid;
   gap: 15px;
+  min-width: 0;
 }
 
 .contact-links a {
@@ -646,7 +662,7 @@ p {
 
 @media (max-width: 760px) {
   .container {
-    width: min(100% - 32px, 600px);
+    width: min(calc(100% - 32px), 600px);
   }
 
   .section {
@@ -670,9 +686,8 @@ p {
     margin-top: 25px;
   }
 
-  .monogram {
-    width: 210px;
-    font-size: 4.5rem;
+  .profile-photo {
+    width: min(210px, 100%);
   }
 
   .navigation {
